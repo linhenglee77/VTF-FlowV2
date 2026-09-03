@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vtf-flow"
+version = "0.1.0"
+description = "VTF-Flow: vehicle-conditioned terrain-feasibility-guided trajectory Flow Matching"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "torch>=2.0",
+  "numpy>=1.24,<2",
+  "pandas>=2.0",
+  "scipy>=1.10",
+  "matplotlib>=3.7",
+  "Pillow>=9.5",
+  "PyYAML>=6.0",
+]
+
+[tool.setuptools]
+packages = [
+  "TerraFlow",
+  "TerraFlow.configs",
+  "TerraFlow.datasets",
+  "TerraFlow.models",
+  "TerraFlow.planners",
+  "TerraFlow.terrain",
+  "TerraFlow.guidance",
+  "TerraFlow.metrics",
+  "TerraFlow.evaluation",
+  "TerraFlow.visualization",
+  "TerraFlow.scripts",
+  "TerraFlow.closed_loop",
+]
+package-dir = {TerraFlow = "."}
+include-package-data = true
+
+[tool.setuptools.package-data]
+TerraFlow = ["configs/*.json", "docs/*.md"]
