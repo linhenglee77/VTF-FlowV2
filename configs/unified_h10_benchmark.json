@@ -1,0 +1,57 @@
+{
+  "protocol": {
+    "source_splits": ["train", "val", "test"],
+    "train": ["00000", "00001", "00002"],
+    "validation": ["00003"],
+    "test": ["00004"]
+  },
+  "trajectory": {
+    "horizon_steps": 10,
+    "planning_dt_s": 0.5,
+    "horizon_seconds": 5.0,
+    "history_steps": 6,
+    "history_dt_s": 0.1
+  },
+  "training": {
+    "seeds": [0, 1, 2],
+    "epochs": 40,
+    "vehicle_lambda": 1.0,
+    "tvk_lambda": 1.0
+  },
+  "sampling": {
+    "candidates": 8,
+    "integration_steps": 16,
+    "solver": "euler"
+  },
+  "guidance": {
+    "eta": 0.2,
+    "schedule": "late-strong",
+    "smoothing_kernel": "kernel_3"
+  },
+  "astar": {
+    "forbid_occupied": true,
+    "forbid_nontraversable": false,
+    "soft_fallback_for_forbidden_goal_or_disconnection": true
+  },
+  "latency": {
+    "batch_size": 1,
+    "warmup_scenes": 50,
+    "exclude_data_loading": true,
+    "exclude_metric_computation": true,
+    "exclude_noise_construction": true
+  },
+  "kinematic": {
+    "curvature_weight": 0.25,
+    "lateral_acceleration_weight": 0.25,
+    "maximum_curvature_per_m": 0.35,
+    "maximum_lateral_acceleration_mps2": 2.5,
+    "curvature_softness_per_m": 0.05,
+    "lateral_acceleration_softness_mps2": 0.5,
+    "minimum_curvature_displacement_m": 0.1,
+    "curvature_reliability_softness_m": 0.02
+  },
+  "statistics": {
+    "bootstrap_resamples": 1000,
+    "bootstrap_seed": 9917
+  }
+}

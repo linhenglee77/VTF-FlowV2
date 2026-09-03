@@ -1,0 +1,37 @@
+{
+  "model": {
+    "trajectory_points": 30,
+    "hidden_dim": 192,
+    "layers": 3,
+    "dropout": 0.0,
+    "history_features": 3,
+    "terrain_channels": 3,
+    "metric_scales": [24.0, 12.0, 3.0],
+    "minimum_remaining_time": 0.05
+  },
+  "data": {
+    "source_splits": ["train"],
+    "validation_sequences": ["00004"]
+  },
+  "training": {
+    "epochs": 40,
+    "batch_size": 128,
+    "learning_rate": 0.0005,
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 1.0,
+    "num_workers": 0,
+    "seed": 4201
+  },
+  "overfit_test": {
+    "samples": 20,
+    "epochs": 500,
+    "learning_rate": 0.002,
+    "required_loss_reduction": 0.9,
+    "target_minADE_m": 0.75
+  },
+  "sampling": {
+    "candidates": 8,
+    "integration_steps": 16,
+    "save_integration_history": false
+  }
+}

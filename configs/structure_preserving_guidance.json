@@ -1,0 +1,35 @@
+{
+  "base_variant_config": "flow_guided.json",
+  "checkpoint": "outputs/experiments/flow_feasibility/flow/best.pt",
+  "data": {
+    "source_splits": ["train"],
+    "validation_sequences": ["00004"]
+  },
+  "sampling": {
+    "candidates": 8,
+    "integration_steps": 16,
+    "save_integration_history": false
+  },
+  "primary": {
+    "eta": 0.2,
+    "schedule": "late-strong",
+    "smoothing_kernel": "kernel_3",
+    "trust_region_rho": 0.2,
+    "trust_region_scope": "trajectory"
+  },
+  "sweep": {
+    "eta": [0.05, 0.10, 0.20, 0.50],
+    "rho": [0.10, 0.20, 0.30]
+  },
+  "adaptive_trigger": {
+    "enabled": true,
+    "alpha": 10.0,
+    "gt_cost_percentile": 75.0
+  },
+  "selection": {
+    "maximum_relative_minade_degradation": 0.01,
+    "maximum_relative_smoothness_degradation": 0.05,
+    "ratio_epsilon": 1e-6
+  },
+  "seed": 4201
+}

@@ -1,0 +1,32 @@
+{
+  "q80": {
+    "goal_error_m": 0.25,
+    "occupancy_exposure_rate": 0.0,
+    "nontraversable_exposure_rate": 0.6000000238418579,
+    "slope_exposure_rate": 0.10000000149011612,
+    "roughness_mean": 0.5535635948181152,
+    "curvature_violation_rate": 0.10000000149011612,
+    "lateral_acceleration_violation_rate": 0.0,
+    "clearance_q05_m": 1.1061429977416992
+  },
+  "q90": {
+    "goal_error_m": 0.25,
+    "occupancy_exposure_rate": 0.0,
+    "nontraversable_exposure_rate": 0.8999999761581421,
+    "slope_exposure_rate": 0.10000000149011612,
+    "roughness_mean": 0.6280511021614075,
+    "curvature_violation_rate": 0.20000000298023224,
+    "lateral_acceleration_violation_rate": 0.0,
+    "clearance_q05_m": 0.669305682182312
+  },
+  "q95": {
+    "goal_error_m": 0.25,
+    "occupancy_exposure_rate": 0.0,
+    "nontraversable_exposure_rate": 1.0,
+    "slope_exposure_rate": 0.20000000298023224,
+    "roughness_mean": 0.7505359053611755,
+    "curvature_violation_rate": 0.4000000059604645,
+    "lateral_acceleration_violation_rate": 0.0,
+    "clearance_q05_m": 0.44578397274017334
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "VTF-Flow terminal-preserving guidance candidate",
+  "status": "validation_selected_not_independently_retested",
+  "selection_split": "validation",
+  "selection_sequence": "00003",
+  "guidance": {
+    "eta": 0.075,
+    "schedule": "late-strong",
+    "gamma": 1.0,
+    "smoothing_kernel": "kernel_3",
+    "endpoint_projection": "terminal"
+  },
+  "selection_constraints": {
+    "maximum_relative_ade_increase": 0.005,
+    "maximum_relative_minade_increase": 0.01,
+    "maximum_goal_error_increase_m": 0.001,
+    "maximum_smoothness_increase_m": 0.0
+  },
+  "notes": [
+    "Selected using sequence 00003 only.",
+    "The existing sequence-00004 headline results were not used for selection.",
+    "Use an untouched sequence or sequence-level cross-validation for confirmatory evaluation."
+  ]
+}

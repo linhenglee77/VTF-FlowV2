@@ -1,0 +1,46 @@
+{
+  "protocol": {
+    "source_splits": ["train", "val", "test"],
+    "primary": {
+      "train": ["00000", "00001", "00002"],
+      "validation": ["00003"],
+      "test": ["00004"]
+    },
+    "swapped": {
+      "train": ["00000", "00001", "00004"],
+      "validation": ["00002"],
+      "test": ["00003"]
+    }
+  },
+  "seeds": [0, 1, 2],
+  "swapped_seeds": [0],
+  "training": {
+    "epochs": 40,
+    "vehicle_lambda": 1.0,
+    "tvk_lambda": 1.0
+  },
+  "sampling": {
+    "candidates": 8,
+    "integration_steps": 16,
+    "solver": "euler"
+  },
+  "guidance": {
+    "eta": 0.2,
+    "schedule": "late-strong",
+    "smoothing_kernel": "kernel_3"
+  },
+  "kinematic": {
+    "curvature_weight": 0.25,
+    "lateral_acceleration_weight": 0.25,
+    "maximum_curvature_per_m": 0.35,
+    "maximum_lateral_acceleration_mps2": 2.5,
+    "curvature_softness_per_m": 0.05,
+    "lateral_acceleration_softness_mps2": 0.5,
+    "minimum_curvature_displacement_m": 0.1,
+    "curvature_reliability_softness_m": 0.02
+  },
+  "statistics": {
+    "bootstrap_resamples": 1000,
+    "seed_for_bootstrap": 8401
+  }
+}
