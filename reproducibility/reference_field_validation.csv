@@ -1,0 +1,11 @@
+diagnostic,perturbation_or_steps,value
+paired_win_rate,smooth_spatial,0.6956521739
+paired_win_rate,local_rotation,0.5762179151
+paired_win_rate,controlled_offset,0.6228391828
+paired_win_rate,obstacle_directed,0.7757988476
+gradient_zero_ratio,all_valid_diagnostics,0.0
+gradient_extreme_ratio,all_valid_diagnostics,0.0
+field_only_initial_mean_F,5,0.55810
+field_only_final_mean_F,5,0.59264
+field_only_initial_occupancy_exposure,5,0.00924
+field_only_final_occupancy_exposure,5,0.00417
