@@ -1,0 +1,18 @@
+{
+  "T_ego_sensor": [
+    [-1.0,  0.0, 0.0, 0.0],
+    [ 0.0, -1.0, 0.0, 0.0],
+    [ 0.0,  0.0, 1.0, 0.0],
+    [ 0.0,  0.0, 0.0, 1.0]
+  ],
+  "sensor_frame": "ouster1/os1_lidar",
+  "ego_frame": "VTF-Flow planning ego (LiDAR origin, base_link-aligned axes)",
+  "translation_policy": "zero because cached GT trajectories use the current LiDAR scan origin",
+  "rotation_evidence": "Local calibration bag TF chain base_link<-os1_lidar and released scan-pose forward-motion statistics both give a 180 degree yaw basis change",
+  "full_T_base_link_os1_lidar_from_calibration_bag": [
+    [-1.0, 0.0, 0.0, 0.190000008],
+    [0.0, -1.0, 0.0, 0.000000024],
+    [0.0, 0.0, 1.0, 0.848359976],
+    [0.0, 0.0, 0.0, 1.0]
+  ]
+}

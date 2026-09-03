@@ -1,0 +1,55 @@
+{
+  "protocol": {
+    "source_splits": ["train", "val", "test"],
+    "primary": {
+      "train": ["00000", "00001", "00002"],
+      "validation": ["00003"],
+      "test": ["00004"]
+    },
+    "swapped": {
+      "train": ["00000", "00001", "00004"],
+      "validation": ["00002"],
+      "test": ["00003"]
+    }
+  },
+  "seeds": [0, 1, 2],
+  "swapped_seeds": [0],
+  "training": {
+    "epochs": 40,
+    "vehicle_lambda": 1.0
+  },
+  "sampling": {
+    "candidates": 8,
+    "integration_steps": 16,
+    "solver": "euler"
+  },
+  "guidance": {
+    "eta": 0.2,
+    "schedule": "late-strong",
+    "smoothing_kernel": "kernel_3",
+    "trust_region_rho": null,
+    "adaptive_trigger_enabled": false
+  },
+  "sensitivity": {
+    "eta": [0.0, 0.05, 0.1, 0.2, 0.5],
+    "integration_steps": [4, 8, 16, 32],
+    "candidates": [1, 3, 5, 8, 10]
+  },
+  "statistics": {
+    "bootstrap_resamples": 1000,
+    "confidence_level": 0.95,
+    "multiple_testing": "benjamini-hochberg",
+    "paired_test": "wilcoxon",
+    "seed_for_bootstrap": 7301
+  },
+  "eta_guardrails": {
+    "maximum_relative_minade_increase": 0.01,
+    "maximum_relative_smoothness_increase": 0.05
+  },
+  "failure_flags": {
+    "large_minade_degradation_m": 0.1,
+    "large_vehicle_cost_reduction": 0.02,
+    "large_smoothness_increase_m": 0.002,
+    "high_terrain_violation_rate": 0.5
+  }
+}

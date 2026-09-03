@@ -1,0 +1,13 @@
+{
+  "method_colors": {
+    "Regression": "#7A7A7A",
+    "Flow": "#4C78A8",
+    "Flow + Feasibility Training": "#72A0C1",
+    "Flow + Smoothed Guidance": "#F2A65A",
+    "VTF-Flow": "#D46A4C"
+  },
+  "project_display_name": "VTF-Flow",
+  "figure_width_in": 7.2,
+  "font_size_pt": 7,
+  "dpi": 600
+}

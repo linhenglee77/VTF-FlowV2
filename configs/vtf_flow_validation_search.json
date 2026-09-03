@@ -1,0 +1,26 @@
+{
+  "selection_split": "validation",
+  "selection_sequence": "00003",
+  "coarse_scene_count": 256,
+  "batch_size": 8,
+  "seeds": [0],
+  "metric_weights": {
+    "ADE_candidate0_m": 0.40,
+    "minADE@K_m": 0.25,
+    "terrain_violation_rate": 0.35
+  },
+  "maximum_relative_accuracy_degradation": 0.01,
+  "variants": [
+    {"name": "current", "eta": 0.20, "schedule": "late-strong", "gamma": 1.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "none"},
+    {"name": "eta005_terminal", "eta": 0.05, "schedule": "late-strong", "gamma": 1.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "terminal"},
+    {"name": "eta010_terminal", "eta": 0.10, "schedule": "late-strong", "gamma": 1.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "terminal"},
+    {"name": "eta015_terminal", "eta": 0.15, "schedule": "late-strong", "gamma": 1.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "terminal"},
+    {"name": "eta020_terminal", "eta": 0.20, "schedule": "late-strong", "gamma": 1.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "terminal"},
+    {"name": "eta030_terminal", "eta": 0.30, "schedule": "late-strong", "gamma": 1.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "terminal"},
+    {"name": "eta010_affine", "eta": 0.10, "schedule": "late-strong", "gamma": 1.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "affine"},
+    {"name": "eta020_affine", "eta": 0.20, "schedule": "late-strong", "gamma": 1.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "affine"},
+    {"name": "eta030_affine", "eta": 0.30, "schedule": "late-strong", "gamma": 1.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "affine"},
+    {"name": "eta020_terminal_gamma2", "eta": 0.20, "schedule": "late-strong", "gamma": 2.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "terminal"},
+    {"name": "eta030_terminal_gamma2", "eta": 0.30, "schedule": "late-strong", "gamma": 2.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "terminal"}
+  ]
+}

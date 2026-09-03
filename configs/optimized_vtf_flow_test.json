@@ -1,0 +1,22 @@
+{
+  "selected_on": {
+    "split": "validation",
+    "sequences": ["00003"],
+    "test_metrics_used_for_selection": false
+  },
+  "model_checkpoint_family": "unguided_flow",
+  "seeds": [0, 1, 2],
+  "sampling": {
+    "candidates": 8,
+    "integration_steps": 16,
+    "noise_protocol": "iid"
+  },
+  "guidance": {
+    "eta": 0.05,
+    "schedule": "late-strong",
+    "gamma": 1.0,
+    "smoothing_kernel": "kernel_3",
+    "endpoint_projection": "terminal",
+    "adaptive_trigger_enabled": false
+  }
+}

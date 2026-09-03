@@ -1,0 +1,7 @@
+{
+  "role": "Frozen development-set thresholds used by the outer-holdout benchmark",
+  "source_sequence": "00003",
+  "selection_rule": "Quantiles of recorded-demonstration diagnostics",
+  "test_sequences_not_used": ["00000", "00001", "00002"],
+  "values_file": "configs/validation_demonstration_envelope.json"
+}

@@ -1,0 +1,23 @@
+{
+  "description": "Frozen-model paired validation of unified terrain-vehicle kinematic feasibility guidance.",
+  "base_variant": "flow_guided",
+  "guidance_strength": 0.2,
+  "guidance_schedule": "late-strong",
+  "smoothing_kernel": "kernel_3",
+  "stress_time_compression_factor": 4.0,
+  "stress_guidance_strength": 0.2,
+  "stress_lateral_acceleration_weight": 1.0,
+  "nominal_limits": {
+    "maximum_curvature_per_m": 0.35,
+    "maximum_lateral_acceleration_mps2": 2.5,
+    "curvature_softness_per_m": 0.05,
+    "lateral_acceleration_softness_mps2": 0.5
+  },
+  "variants": [
+    {"name": "Flow", "enabled": false, "curvature_weight": 0.0, "lateral_acceleration_weight": 0.0},
+    {"name": "Terrain-vehicle", "enabled": true, "curvature_weight": 0.0, "lateral_acceleration_weight": 0.0},
+    {"name": "Terrain-vehicle + curvature", "enabled": true, "curvature_weight": 0.25, "lateral_acceleration_weight": 0.0},
+    {"name": "Terrain-vehicle + lateral acceleration", "enabled": true, "curvature_weight": 0.0, "lateral_acceleration_weight": 0.25},
+    {"name": "Unified TVK", "enabled": true, "curvature_weight": 0.25, "lateral_acceleration_weight": 0.25}
+  ]
+}

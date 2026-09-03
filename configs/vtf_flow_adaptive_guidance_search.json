@@ -1,0 +1,27 @@
+{
+  "selection_split": "validation",
+  "selection_sequence": "00003",
+  "coarse_scene_count": 512,
+  "batch_size": 8,
+  "seeds": [0],
+  "metric_weights": {
+    "ADE_candidate0_m": 0.40,
+    "minADE@K_m": 0.30,
+    "terrain_violation_rate": 0.30
+  },
+  "maximum_relative_accuracy_degradation": 0.0025,
+  "variants": [
+    {"name": "eta001", "eta": 0.01, "schedule": "late-strong", "gamma": 1.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "terminal"},
+    {"name": "eta002", "eta": 0.02, "schedule": "late-strong", "gamma": 1.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "terminal"},
+    {"name": "eta003", "eta": 0.03, "schedule": "late-strong", "gamma": 1.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "terminal"},
+    {"name": "eta004", "eta": 0.04, "schedule": "late-strong", "gamma": 1.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "terminal"},
+    {"name": "eta005", "eta": 0.05, "schedule": "late-strong", "gamma": 1.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "terminal"},
+    {"name": "adaptive_005_r050", "eta": 0.05, "schedule": "late-strong", "gamma": 1.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "terminal", "adaptive_trigger_enabled": true, "trigger_alpha": 15.0, "trigger_reference_cost": 0.50},
+    {"name": "adaptive_010_r050", "eta": 0.10, "schedule": "late-strong", "gamma": 1.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "terminal", "adaptive_trigger_enabled": true, "trigger_alpha": 15.0, "trigger_reference_cost": 0.50},
+    {"name": "adaptive_010_r055", "eta": 0.10, "schedule": "late-strong", "gamma": 1.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "terminal", "adaptive_trigger_enabled": true, "trigger_alpha": 15.0, "trigger_reference_cost": 0.55},
+    {"name": "adaptive_010_r060", "eta": 0.10, "schedule": "late-strong", "gamma": 1.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "terminal", "adaptive_trigger_enabled": true, "trigger_alpha": 15.0, "trigger_reference_cost": 0.60},
+    {"name": "adaptive_020_r055", "eta": 0.20, "schedule": "late-strong", "gamma": 1.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "terminal", "adaptive_trigger_enabled": true, "trigger_alpha": 15.0, "trigger_reference_cost": 0.55},
+    {"name": "adaptive_020_r060", "eta": 0.20, "schedule": "late-strong", "gamma": 1.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "terminal", "adaptive_trigger_enabled": true, "trigger_alpha": 15.0, "trigger_reference_cost": 0.60},
+    {"name": "adaptive_020_r065", "eta": 0.20, "schedule": "late-strong", "gamma": 1.0, "smoothing_kernel": "kernel_3", "endpoint_projection": "terminal", "adaptive_trigger_enabled": true, "trigger_alpha": 15.0, "trigger_reference_cost": 0.65}
+  ]
+}

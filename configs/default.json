@@ -1,0 +1,20 @@
+{
+  "seed": 7,
+  "dataset": {
+    "root": null,
+    "history_steps": 10,
+    "future_steps": 20,
+    "point_features": 4
+  },
+  "terrain": {
+    "representation": "bev_grid",
+    "resolution_m": 0.25,
+    "extent_m": 40.0,
+    "feature_dim": 64
+  },
+  "planner": {
+    "horizon": 20,
+    "trajectory_dim": 3,
+    "num_samples": 16
+  }
+}

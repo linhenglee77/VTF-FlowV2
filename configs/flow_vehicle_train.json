@@ -1,0 +1,31 @@
+{
+  "name": "flow_vehicle_train",
+  "variant_role": "B",
+  "checkpoint": "outputs/experiments/flow_feasibility/flow_vehicle_lambda_1/best.pt",
+  "training_feasibility": true,
+  "data": {"source_splits": ["train"], "validation_sequences": ["00004"]},
+  "sampling": {"candidates": 8, "integration_steps": 16, "save_integration_history": false},
+  "guidance": {
+    "enabled": false, "strength": 0.0, "schedule": "late-strong", "gamma": 1.0,
+    "gradient_normalization": "rms", "maximum_gradient_norm": 4.0,
+    "minimum_gradient_norm": 1e-7, "field_type": "vehicle",
+    "planning_dt_s": 0.5, "save_clean_estimate_history": false
+  },
+  "terrain_field": {
+    "forward_m": 24.0, "lateral_m": 12.0, "height_range_m": 4.5,
+    "slope_reference": 0.35, "roughness_reference_m": 0.25,
+    "occupancy_weight": 2.0, "traversability_weight": 1.2,
+    "slope_weight": 0.8, "roughness_weight": 0.6,
+    "clearance_weight": 0.8, "speed_reference_mps": 3.0, "cost_temperature": 3.0
+  },
+  "vehicle_conditioning": {
+    "speed_reference_mps": 3.0, "maximum_speed_ratio": 2.0,
+    "speed_response_exponent": 1.5, "slope_speed_gain": 1.0,
+    "roughness_speed_gain": 0.8, "clearance_speed_gain": 1.0,
+    "base_clearance_requirement_m": 0.75, "speed_clearance_gain_m": 1.25,
+    "clearance_softness_m": 0.25, "heading_lookahead_time_s": 0.5,
+    "heading_min_displacement_m": 0.15, "heading_reliability_softness_m": 0.05
+  },
+  "metrics": {"occupancy_threshold": 0.5, "nontraversable_threshold": 0.5, "normalized_slope_threshold": 1.0},
+  "seed": 4201
+}

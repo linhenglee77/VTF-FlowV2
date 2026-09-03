@@ -1,0 +1,87 @@
+{
+  "selection_split": "validation",
+  "selection_sequence": "00003",
+  "scene_count": 256,
+  "batch_size": 16,
+  "seeds": [0, 1, 2],
+  "selection_constraints": {
+    "maximum_relative_ade_increase": 0.005,
+    "maximum_relative_minade_increase": 0.01,
+    "maximum_goal_error_increase_m": 0.001,
+    "maximum_smoothness_increase_m": 0.0
+  },
+  "variants": [
+    {
+      "name": "current_full_eta020",
+      "eta": 0.20,
+      "schedule": "late-strong",
+      "gamma": 1.0,
+      "smoothing_kernel": "kernel_3",
+      "endpoint_projection": "none"
+    },
+    {
+      "name": "terminal_eta005",
+      "eta": 0.05,
+      "schedule": "late-strong",
+      "gamma": 1.0,
+      "smoothing_kernel": "kernel_3",
+      "endpoint_projection": "terminal"
+    },
+    {
+      "name": "terminal_eta0025",
+      "eta": 0.025,
+      "schedule": "late-strong",
+      "gamma": 1.0,
+      "smoothing_kernel": "kernel_3",
+      "endpoint_projection": "terminal"
+    },
+    {
+      "name": "terminal_eta0075",
+      "eta": 0.075,
+      "schedule": "late-strong",
+      "gamma": 1.0,
+      "smoothing_kernel": "kernel_3",
+      "endpoint_projection": "terminal"
+    },
+    {
+      "name": "terminal_eta010",
+      "eta": 0.10,
+      "schedule": "late-strong",
+      "gamma": 1.0,
+      "smoothing_kernel": "kernel_3",
+      "endpoint_projection": "terminal"
+    },
+    {
+      "name": "terminal_eta020",
+      "eta": 0.20,
+      "schedule": "late-strong",
+      "gamma": 1.0,
+      "smoothing_kernel": "kernel_3",
+      "endpoint_projection": "terminal"
+    },
+    {
+      "name": "affine_eta005",
+      "eta": 0.05,
+      "schedule": "late-strong",
+      "gamma": 1.0,
+      "smoothing_kernel": "kernel_3",
+      "endpoint_projection": "affine"
+    },
+    {
+      "name": "affine_eta010",
+      "eta": 0.10,
+      "schedule": "late-strong",
+      "gamma": 1.0,
+      "smoothing_kernel": "kernel_3",
+      "endpoint_projection": "affine"
+    },
+    {
+      "name": "affine_eta020",
+      "eta": 0.20,
+      "schedule": "late-strong",
+      "gamma": 1.0,
+      "smoothing_kernel": "kernel_3",
+      "endpoint_projection": "affine"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "grid": {
+    "x_min_m": 0.0,
+    "x_max_m": 24.0,
+    "y_min_m": -12.0,
+    "y_max_m": 12.0,
+    "resolution_m": 0.25
+  },
+  "features": {
+    "minimum_points_per_cell": 3,
+    "elevation_percentile": 10.0,
+    "obstacle_height_threshold_m": 0.5,
+    "minimum_obstacle_points": 2,
+    "semantic_obstacle_min_fraction": 0.1,
+    "maximum_clearance_m": 6.0
+  },
+  "cost": {
+    "occupancy_weight": 3.0,
+    "slope_weight": 1.2,
+    "roughness_weight": 0.8,
+    "semantic_weight": 0.35,
+    "clearance_weight": 1.0,
+    "unknown_weight": 0.15,
+    "slope_reference_deg": 25.0,
+    "roughness_reference_m": 0.2,
+    "clearance_reference_m": 2.0,
+    "unknown_semantic_cost": 0.55,
+    "spatial_smoothing_sigma_m": 0.5,
+    "spatial_smoothing_truncate_sigma": 3.0
+  },
+  "vehicle_conditioning": {
+    "speed_reference_mps": 3.0,
+    "maximum_speed_ratio": 2.0,
+    "speed_response_exponent": 1.5,
+    "slope_speed_gain": 1.0,
+    "roughness_speed_gain": 0.8,
+    "clearance_speed_gain": 1.0,
+    "base_clearance_requirement_m": 0.75,
+    "speed_clearance_gain_m": 1.25,
+    "clearance_softness_m": 0.25,
+    "heading_lookahead_time_s": 0.5,
+    "heading_min_displacement_m": 0.15,
+    "heading_reliability_softness_m": 0.05
+  },
+  "guidance": {
+    "trajectory_gradient_smoothing_sigma_waypoints": 1.0,
+    "trajectory_gradient_smoothing_truncate_sigma": 3.0
+  },
+  "semantic_policy": {
+    "provenance": "Initial vehicle-agnostic planning priors, not RELLIS-3D annotations and not learned costs. Values must be reviewed for the target vehicle and task.",
+    "label_encoding": "Exact uint32 values are used. No undocumented SemanticKITTI bit mask is applied.",
+    "classes": {
+      "0":  {"name": "void",     "cost": 0.55, "role": "unknown",  "rationale": "Unlabeled evidence is uncertain rather than assumed free."},
+      "1":  {"name": "dirt",     "cost": 0.10, "role": "ground",   "rationale": "Usually intended off-road driving surface; vehicle-specific traction is not encoded."},
+      "3":  {"name": "grass",    "cost": 0.25, "role": "ground",   "rationale": "Potentially traversable but less certain than compact dirt."},
+      "4":  {"name": "tree",     "cost": 1.00, "role": "obstacle", "rationale": "Rigid above-ground obstacle."},
+      "5":  {"name": "pole",     "cost": 1.00, "role": "obstacle", "rationale": "Rigid above-ground obstacle."},
+      "6":  {"name": "water",    "cost": 1.00, "role": "ground",   "rationale": "Depth and support are unknown, so the initial policy forbids it."},
+      "7":  {"name": "sky",      "cost": 0.55, "role": "ignore",   "rationale": "Not a terrain return; ignored when choosing a cell class."},
+      "8":  {"name": "vehicle",  "cost": 1.00, "role": "obstacle", "rationale": "Occupied dynamic or static object."},
+      "9":  {"name": "object",   "cost": 1.00, "role": "obstacle", "rationale": "Unspecified above-ground object is conservatively forbidden."},
+      "10": {"name": "asphalt",  "cost": 0.05, "role": "ground",   "rationale": "Typically compact and smooth when geometry agrees."},
+      "12": {"name": "building", "cost": 1.00, "role": "obstacle", "rationale": "Rigid structure."},
+      "15": {"name": "log",      "cost": 1.00, "role": "obstacle", "rationale": "Above-ground obstacle for the initial vehicle-agnostic policy."},
+      "17": {"name": "person",   "cost": 1.00, "role": "obstacle", "rationale": "Safety-critical dynamic obstacle."},
+      "18": {"name": "fence",    "cost": 1.00, "role": "obstacle", "rationale": "Boundary obstacle."},
+      "19": {"name": "bush",     "cost": 0.85, "role": "obstacle", "rationale": "Geometry and penetrability are uncertain; treated conservatively."},
+      "23": {"name": "concrete", "cost": 0.10, "role": "ground",   "rationale": "Potentially traversable surface when slope and occupancy agree."},
+      "27": {"name": "barrier",  "cost": 1.00, "role": "obstacle", "rationale": "Explicit barrier class."},
+      "31": {"name": "puddle",   "cost": 0.75, "role": "ground",   "rationale": "Unknown depth and traction; discouraged but not asserted physically impassable."},
+      "33": {"name": "mud",      "cost": 0.60, "role": "ground",   "rationale": "Potential loss of traction; value is a tunable initial prior."},
+      "34": {"name": "rubble",   "cost": 0.70, "role": "ground",   "rationale": "Irregular support and clearance risk; geometry remains an independent term."}
+    }
+  }
+}

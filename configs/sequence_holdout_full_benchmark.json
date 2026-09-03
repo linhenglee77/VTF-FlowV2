@@ -1,0 +1,34 @@
+{
+  "purpose": "strict sequence-level comparison of final VTF-Flow with all benchmark methods",
+  "benchmark_config": "configs/unified_h10_benchmark.json",
+  "frozen_v2_protocol": "configs/sequence_holdout_robustness.json",
+  "frozen_v2_results": "outputs/sequence_holdout_robustness",
+  "methods": ["CV", "ASTAR", "REG", "FLOW", "VTF_V2"],
+  "display_names": {
+    "CV": "Constant Velocity",
+    "ASTAR": "A* terrain planner",
+    "REG": "Deterministic regression",
+    "FLOW": "Flow Matching",
+    "VTF_V2": "VTF-Flow"
+  },
+  "primary_metrics": [
+    "ADE_candidate0_m",
+    "minADE@K_m",
+    "diversity_m",
+    "mean_unified_tvk_cost",
+    "terrain_violation_rate",
+    "occupancy_exposure_rate",
+    "curvature_violation_rate_independent",
+    "smoothness_m_independent",
+    "compliant_candidate_rate_q80",
+    "GCCR_at_K_q80"
+  ],
+  "evaluation_batch_size": 64,
+  "interpretation": {
+    "independent_unit": "held-out sequence",
+    "technical_replicates": "training seeds averaged within each held-out sequence",
+    "sequence_aggregation": "unweighted macro mean and sample standard deviation across three held-out sequences",
+    "frame_role": "temporally correlated repeated observation",
+    "inference": "descriptive effect sizes; no frame-wise significance tests"
+  }
+}
